@@ -11,3 +11,6 @@
     * [listener](netio/listener/listener.md)
   * [Connection](netio/connection/index.md)
     * [connection](netio/connection/connection.md)
+  * [Connection Filter](netio/filter/index.md)
+    * [filter](netio/filter/filter.md)
+    * [filterManager](netio/filter/filterManager.md)
