@@ -24,7 +24,6 @@ type FilterManager interface {
 
 ```go
 type filterManager struct {
-    // 用的是指针，而且是activeReadFilter实现，而不是ReadFilter接口，why？
 	upstreamFilters   []*activeReadFilter 
 	downstreamFilters []types.WriteFilter
 	conn              types.Connection

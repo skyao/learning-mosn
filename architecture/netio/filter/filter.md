@@ -2,6 +2,8 @@
 
 ## filter status
 
+`pkg/types/network.go`
+
 ```go
 type FilterStatus string
 
@@ -16,6 +18,8 @@ StopIteration表示不再继续，直接跳出当前filter chain的循环。
 详见filterManager的onContinueReading()方法。
 
 ## filter interface
+
+`pkg/types/network.go`
 
 ```go
 // 总结：ReadFilter只被filterManager直接调用，也就是filterManager完全包裹了ReadFilter
@@ -35,6 +39,7 @@ type WriteFilter interface {
 	OnWrite(buffer []IoBuffer) FilterStatus
 }
 
+// 被read filter调用，用来和connection通讯
 type ReadFilterCallbacks interface {
 	Connection() Connection
 	ContinueReading()
@@ -44,6 +49,8 @@ type ReadFilterCallbacks interface {
 ```
 
 ## activeReadFilter struct
+
+`pkg/network/filtermanager.go`
 
 activeReadFilter包装ReadFilter，但实现的是ReadFilterCallbacks接口：
 

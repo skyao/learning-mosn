@@ -22,6 +22,8 @@ type Connection interface {
 
 ## connection struct
 
+`pkg/network/conection.go`
+
 ```go
 type connection struct {
 	id         uint64
